@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAE Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>UAE Calculator</h1>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="hero">
+        <h2>Welcome to the UAE Calculator</h2>
+        <p>Calculate your gratuity and more with our easy-to-use tools.</p>
+        <a href="#calculator" class="cta-button">Calculate Now</a>
+    </section>
+    <section id="features">
+        <h2>Features</h2>
+        <div class="feature">
+            <h3>Gratuity Calculator</h3>
+            <p>Quickly calculate your gratuity based on your salary and service duration.</p>
+        </div>
+        <div class="feature">
+            <h3>Currency Converter</h3>
+            <p>Convert currencies effortlessly with real-time conversion rates.</p>
+        </div>
+        <div class="feature">
+            <h3>Tax Calculator</h3>
+            <p>Get accurate tax calculations based on the latest regulations.</p>
+        </div>
+    </section>
+    <section id="calculator">
+        <h2>Calculator Tool</h2>
+        <form id="calc-form">
+            <label for="salary">Enter your salary:</label>
+            <input type="number" id="salary" name="salary" required>
+            <label for="years">Years of service:</label>
+            <input type="number" id="years" name="years" required>
+            <button type="submit" class="cta-button">Calculate Gratuity</button>
+        </form>
+        <div id="result"></div>
+    </section>
+    <footer>
+        <h2>Contact Us</h2>
+        <p>If you have any questions or feedback, feel free to reach out!</p>
+        <p>&copy; 2026 UAE Calculator. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('calc-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const salary = parseFloat(document.getElementById('salary').value);
+            const years = parseFloat(document.getElementById('years').value);
+            const gratuity = salary * years * 0.5;  // Example calculation
+            document.getElementById('result').innerText = 'Gratuity: AED ' + gratuity.toFixed(2);
+        });
+    </script>
+</body>
+</html>
